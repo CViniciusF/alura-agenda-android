@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/activity_student_form_name"
+        android:layout_margin="8dp"
+        android:inputType="textCapWords"
+        android:hint="@string/hint_form_name"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/activity_student_form_phone"
+        android:layout_margin="8dp"
+        android:inputType="phone"
+        android:hint="@string/hint_form_phone"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/activity_student_form_email"
+        android:layout_margin="8dp"
+        android:inputType="textEmailAddress"
+        android:hint="@string/hint_form_email"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_student_form_button_submit"
+        android:layout_margin="8dp"
+        android:text="@string/hint_form_submit"
+        />
+
+
+</LinearLayout>

@@ -7,22 +7,26 @@
     android:layout_height="match_parent">
 
     <ListView
-        android:id="@+id/activity_main_students_list"
+        android:id="@+id/activity_students_list_listview"
         android:layout_width="match_parent"
-        android:layout_height="711dp"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/activity_main_fab_new_student"
+        android:id="@+id/activity_students_list_fab_new_student"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="26dp"
         android:clickable="true"
+        android:focusable="true"
+        app:tint="@color/white"
+        android:src="@drawable/ic_action_new_student"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/fab_content_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

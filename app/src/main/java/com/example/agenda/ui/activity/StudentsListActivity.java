@@ -2,14 +2,10 @@ package com.example.agenda.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,15 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.agenda.R;
 import com.example.agenda.dao.StudentDao;
 import com.example.agenda.model.Student;
+import com.example.agenda.ui.StudentsListView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.List;
-
+@SuppressWarnings("CommentedOutCode")
 public class StudentsListActivity extends AppCompatActivity {
 
     public static final String TITLE_APP_BAR = "Students list";
-    private ArrayAdapter<Student> adapter;
     private StudentDao dao;
+    private final StudentsListView studentsListView = new StudentsListView(this);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,8 +35,6 @@ public class StudentsListActivity extends AppCompatActivity {
         configureFabStudent();
         configureList();
 
-        dao.saveStudent(new Student("João", "5593249394", "joao@joao.com"));
-        dao.saveStudent(new Student("Firmina", "3393249394", "Firmina@Firmina.com"));
 
 //        Toast.makeText(this, "Eaee", Toast.LENGTH_SHORT).show();
 
@@ -62,8 +56,7 @@ public class StudentsListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        adapter.clear();
-        adapter.addAll(dao.getAllStudents());
+        studentsListView.update();
     }
 
     @Override
@@ -78,11 +71,7 @@ public class StudentsListActivity extends AppCompatActivity {
         int itemId = item.getItemId();
 
         if (itemId == R.id.activity_student_list_menu_remove) {
-            AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-            Student selectedStudent = adapter.getItem(menuInfo.position);
-            dao.remove(selectedStudent);
-            // remove from adapter to re-render and see the changes
-            adapter.remove(selectedStudent);
+            studentsListView.confirmStudentRemove(item);
         }
 
         return super.onContextItemSelected(item);
@@ -91,12 +80,7 @@ public class StudentsListActivity extends AppCompatActivity {
     private void configureFabStudent() {
         FloatingActionButton newStudentButton = findViewById(R.id.activity_students_list_fab_new_student);
 
-        newStudentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openStudentFormActivity();
-            }
-        });
+        newStudentButton.setOnClickListener(view -> openStudentFormActivity());
     }
 
     private void openStudentFormActivity() {
@@ -106,11 +90,11 @@ public class StudentsListActivity extends AppCompatActivity {
 
 
     private void configureList() {
-        ListView studentsListView = findViewById(R.id.activity_students_list_listview);
-        configureAdapter(studentsListView);
-        configureListenerClickOnItem(studentsListView);
+        ListView studentsListListView = findViewById(R.id.activity_students_list_listview);
+        studentsListView.configureAdapter(studentsListListView);
+        configureListenerClickOnItem(studentsListListView);
 //        configureLongClickListener(studentsListView);
-        registerForContextMenu(studentsListView);
+        registerForContextMenu(studentsListListView);
     }
 
 //    private void configureLongClickListener(ListView studentsListView) {
@@ -130,19 +114,12 @@ public class StudentsListActivity extends AppCompatActivity {
 //    }
 
     private void configureListenerClickOnItem(ListView studentsListView) {
-        studentsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int index, long id) {
-                Student selectedStudent = (Student) adapterView.getItemAtPosition(index);
-                Intent goToFormActivity = new Intent(StudentsListActivity.this, StudentFormActivity.class);
-                goToFormActivity.putExtra("student", selectedStudent);
-                startActivity(goToFormActivity);
-            }
+        studentsListView.setOnItemClickListener((adapterView, view, index, id) -> {
+            Student selectedStudent = (Student) adapterView.getItemAtPosition(index);
+            Intent goToFormActivity = new Intent(StudentsListActivity.this, StudentFormActivity.class);
+            goToFormActivity.putExtra("student", selectedStudent);
+            startActivity(goToFormActivity);
         });
     }
 
-    private void configureAdapter(ListView studentsListView) {
-        adapter = new ArrayAdapter<>(this, R.layout.list_item_student);
-        studentsListView.setAdapter(adapter);
-    }
 }

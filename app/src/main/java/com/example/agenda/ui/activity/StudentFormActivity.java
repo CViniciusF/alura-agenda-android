@@ -1,10 +1,11 @@
 package com.example.agenda.ui.activity;
 
+import static com.example.agenda.ui.activity.ConstantsActivities.STUDENTS_KEY;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,8 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.agenda.R;
 import com.example.agenda.dao.StudentDao;
 import com.example.agenda.model.Student;
-
-import static com.example.agenda.ui.activity.ConstantsActivities.STUDENTS_KEY;
 
 public class StudentFormActivity extends AppCompatActivity {
 
@@ -71,12 +70,7 @@ public class StudentFormActivity extends AppCompatActivity {
     private void configureSaveButton() {
         Button submitButton = findViewById(R.id.activity_student_form_button_submit);
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finishForm();
-            }
-        });
+        submitButton.setOnClickListener(view -> finishForm());
     }
 
     private void finishForm() {

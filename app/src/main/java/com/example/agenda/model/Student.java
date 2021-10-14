@@ -1,5 +1,7 @@
 package com.example.agenda.model;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 
 public class Student implements Serializable {
@@ -18,6 +20,7 @@ public class Student implements Serializable {
 
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "Name: " + name + " - Phone: " + phone;

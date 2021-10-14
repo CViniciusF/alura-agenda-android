@@ -14,7 +14,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:hint="@string/hint_form_name"
-            android:inputType="textCapWords" />
+            android:inputType="textCapWords"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/activity_student_form_phone"
@@ -22,7 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:hint="@string/hint_form_phone"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/activity_student_form_email"
@@ -30,84 +32,96 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:hint="@string/hint_form_email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="Testing ScrollView"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/testing_scrollview"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/activity_student_form_button_submit"

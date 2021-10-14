@@ -3,14 +3,16 @@
     package="com.example.agenda">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Agenda">
+        android:theme="@style/Theme.Agenda"
+        android:name=".AgendaApplication">
         <activity android:name=".ui.activity.StudentFormActivity"/>
-        <activity android:name=".ui.activity.StudentsListActivity">
+        <activity android:name=".ui.activity.StudentsListActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

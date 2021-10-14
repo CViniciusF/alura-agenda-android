@@ -5,6 +5,10 @@
     <string name="hint_form_phone">Telefone</string>
     <string name="hint_form_email">E-mail</string>
     <string name="hint_form_submit">Salvar</string>
+    <string name="testing_scrollview">Testing ScrollView</string>
+    <string name="save">Save</string>
+    <string name="remove">Remove</string>
+    <string name="do_nothing">Do nothing</string>
 
 
 </resources>
